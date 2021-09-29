@@ -143,7 +143,7 @@ Write the following functions:
 3. ``sim_step(cities,p_spread,p_cure)``. This is the most important function in the assignment. This function will execute a single *time step* of your simulation. Depending on how fast you want to think of your zombies spreading, that time step could be a day, an hour, a week, whatever. When modelling a real zombie outbreak, you'd determine the size of your time step from the empirical data. Here is some English-language "pseudocode" for function. You'll have to turn it into Python::
    
     for each city in cities:
-        if the city is infected and numpy.random.rand() < p_spread:
+        if the city is not infected and numpy.random.rand() < p_spread:
             choose a victim city (at random -- hint: numpy.random.randint()) from the list of this city's neighbours
             infect the victim city!
         
